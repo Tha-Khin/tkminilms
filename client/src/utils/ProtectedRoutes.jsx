@@ -1,0 +1,39 @@
+import { Outlet, Navigate } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import axios from "axios";
+import { AppContext } from "../context/AppContext";
+import Loading from "../components/Loading";
+
+const ProtectedRoutes = () => {
+    const { token, expiry, backendUrl } = useContext(AppContext)
+    const [isValid, setIsValid] = useState(null);
+
+    useEffect(() => {
+        if (!token || new Date() > expiry) {
+            setIsValid(false);
+            return;
+        }
+        
+        axios.post(backendUrl + '/api/auth/check', { action: "checkToken", token }, {headers: {'Content-Type': 'application/json'}})
+        .then(res => {
+            if (res.data.success === true) {
+                setIsValid(true)
+                return;
+            }else{
+                localStorage.clear();
+                setIsValid(false);
+                return;
+            }
+        })
+        .catch(() => {
+            localStorage.clear();
+            setIsValid(false);
+            return;
+        });
+    }, []);
+
+    if (isValid === null) return <Loading/>;
+    return isValid ? <Outlet /> : <Navigate to="/login" />;
+};
+
+export default ProtectedRoutes;
