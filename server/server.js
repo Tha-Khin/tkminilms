@@ -13,7 +13,6 @@ const app = express();
 const allowedOrigins = [
   "http://localhost:5173",
   "https://tkminilms.vercel.app",
-  "https://www.youtube.com",
 ];
 
 // Middlewares
