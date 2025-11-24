@@ -85,7 +85,7 @@ const CourseDetails = () => {
               <div
                 className={`overflow-hidden transition-all duration-300 max-h-96`}
               >
-                <ul className="list-disc pl-4 md:pl-10 pr-4 py-2 text-gray-600 border-t border-gray-300">
+                <ul className="list-disc pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300">
                   {JSON.parse(courseData.lessons).map((lecture, i) => (
                     <li key={i} className="flex items-start gap-2 py-2">
                       <img
