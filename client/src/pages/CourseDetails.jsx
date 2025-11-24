@@ -75,7 +75,6 @@ const CourseDetails = () => {
             <div className="border border-gray-300 bg-white mb-2 rounded min-w-[270px] md:min-w-[600px] lg:min-w-[400px] mt-2">
               <div className="flex items-center justify-between px-4 py-3 cursor-pointer select-none">
                 <div className="flex items-center gap-2">
-                  <img src={assets.down_arrow_icon} alt="arrow icon" />
                   <p className="font-medium md:text-base text-sm">Lectures</p>
                 </div>
                 <p className="text-sm md:text-default">
