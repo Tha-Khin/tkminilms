@@ -87,7 +87,10 @@ const CourseDetails = () => {
               >
                 <ul className="list-disc pl-4 pr-4 py-2 text-gray-600 border-t border-gray-300">
                   {JSON.parse(courseData.lessons).map((lecture, i) => (
-                    <li key={i} className="flex items-start gap-2 py-2">
+                    <li
+                      key={i}
+                      className="flex items-start justify-center gap-2 py-2"
+                    >
                       <img
                         src={assets.play_icon}
                         alt="play icon"
