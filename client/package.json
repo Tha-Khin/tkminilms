@@ -13,7 +13,6 @@
     "@tailwindcss/vite": "^4.1.15",
     "axios": "^1.12.2",
     "humanize-duration": "^3.33.1",
-    "rc-progress": "^4.0.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.4",
